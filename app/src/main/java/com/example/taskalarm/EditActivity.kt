@@ -1,5 +1,6 @@
 package com.example.taskalarm
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.CheckBox
@@ -33,6 +34,8 @@ class EditActivity : AppCompatActivity() {
         binding!!.horaTxtEdit.setText(intent.getStringExtra("hora"))
         binding!!.enderecoTxtEdit.setText(intent.getStringExtra("endereco"))
 
+        turnDias()
+
         val titulo  = binding!!.tituloTxtEdit.text.toString()
         val descricao  = binding!!.descricaoTxtEdit.text.toString()
         val silencioso  = binding!!.silenciosoCbEdit.isChecked
@@ -65,15 +68,70 @@ class EditActivity : AppCompatActivity() {
         finish()
     }
 
-    fun switchDia(view: View){
+    fun switchDia(view:View){
         when(view.id){
-            R.id.domingoBtnEdit -> { dias!![0] = !dias!![0] }
-            R.id.segundaBtnEdit -> { dias!![1] = !dias!![1] }
-            R.id.tercaBtnEdit -> { dias!![2] = !dias!![2] }
-            R.id.quartaBtnEdit -> { dias!![3] = !dias!![3] }
-            R.id.quintaBtnEdit -> { dias!![4] = !dias!![4] }
-            R.id.sextaBtnEdit -> { dias!![5] = !dias!![5] }
-            R.id.sabadoBtnEdit -> { dias!![6] = !dias!![6] }
+            R.id.domingoBtnEdit -> {
+                dias[0] = !dias[0]
+                if(dias[0]) binding!!.domingoBtnEdit.setBackgroundColor(Color.parseColor("#FF2196F3"))
+                else binding!!.domingoBtnEdit.setBackgroundColor(Color.parseColor("#3F51B5"))
+            }
+            R.id.segundaBtnEdit -> {
+                dias[1] = !dias[1]
+                if(dias[1]) binding!!.segundaBtnEdit.setBackgroundColor(Color.parseColor("#FF2196F3"))
+                else binding!!.segundaBtnEdit.setBackgroundColor(Color.parseColor("#3F51B5"))
+            }
+            R.id.tercaBtnEdit -> {
+                dias[2] = !dias[2]
+                if(dias[2]) binding!!.tercaBtnEdit.setBackgroundColor(Color.parseColor("#FF2196F3"))
+                else binding!!.tercaBtnEdit.setBackgroundColor(Color.parseColor("#3F51B5"))
+            }
+            R.id.quartaBtnEdit -> {
+                dias[3] = !dias[3]
+                if(dias[3]) binding!!.quartaBtnEdit.setBackgroundColor(Color.parseColor("#FF2196F3"))
+                else binding!!.quartaBtnEdit.setBackgroundColor(Color.parseColor("#3F51B5"))
+            }
+            R.id.quintaBtnEdit -> {
+                dias[4] = !dias[4]
+                if(dias[4]) binding!!.quintaBtnEdit.setBackgroundColor(Color.parseColor("#FF2196F3"))
+                else binding!!.quintaBtnEdit.setBackgroundColor(Color.parseColor("#3F51B5"))
+            }
+            R.id.sextaBtnEdit -> {
+                dias[5] = !dias[5]
+                if(dias[5]) binding!!.sextaBtnEdit.setBackgroundColor(Color.parseColor("#FF2196F3"))
+                else binding!!.sextaBtnEdit.setBackgroundColor(Color.parseColor("#3F51B5"))
+            }
+            R.id.sabadoBtnEdit -> {
+                dias[6] = !dias[6]
+                if(dias[6]) binding!!.sabadoBtnEdit.setBackgroundColor(Color.parseColor("#FF2196F3"))
+                else binding!!.sabadoBtnEdit.setBackgroundColor(Color.parseColor("#3F51B5"))
+            }
+        }
+    }
+    fun turnDias(){
+        for(i in dias!!.indices) {
+            when (i) {
+                0 -> {
+                    if (dias[0]) binding!!.domingoBtnEdit.setBackgroundColor(Color.parseColor("#FF2196F3"))
+                }
+                1 -> {
+                    if (dias[1]) binding!!.segundaBtnEdit.setBackgroundColor(Color.parseColor("#FF2196F3"))
+                }
+                2 -> {
+                    if (dias[2]) binding!!.tercaBtnEdit.setBackgroundColor(Color.parseColor("#FF2196F3"))
+                }
+                3 -> {
+                    if (dias[3]) binding!!.quartaBtnEdit.setBackgroundColor(Color.parseColor("#FF2196F3"))
+                }
+                4 -> {
+                    if (dias[4]) binding!!.quintaBtnEdit.setBackgroundColor(Color.parseColor("#FF2196F3"))
+                }
+                5 -> {
+                    if (dias[5]) binding!!.sextaBtnEdit.setBackgroundColor(Color.parseColor("#FF2196F3"))
+                }
+                6 -> {
+                    if (dias[6]) binding!!.sabadoBtnEdit.setBackgroundColor(Color.parseColor("#FF2196F3"))
+                }
+            }
         }
     }
 
