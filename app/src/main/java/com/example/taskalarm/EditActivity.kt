@@ -56,6 +56,11 @@ class EditActivity : AppCompatActivity() {
         finish()
     }
 
+    fun deletar(view:View){
+        MainActivity.alarmes.removeAt(id!!)
+        finish()
+    }
+
     fun cancelar(view: View){
         finish()
     }
