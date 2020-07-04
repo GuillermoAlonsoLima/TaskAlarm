@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/tituloTxt"
+            android:id="@+id/tituloTxtEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -32,7 +32,7 @@
             android:textColorHint="#FFFFFF" />
 
         <EditText
-            android:id="@+id/descricaoTxt"
+            android:id="@+id/descricaoTxtEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -42,7 +42,7 @@
             android:textColorHint="#FFFFFF" />
 
         <CheckBox
-            android:id="@+id/silenciosoCb"
+            android:id="@+id/silenciosoCbEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tocar no Silencioso"
@@ -54,49 +54,49 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/domingoBtn"
+                android:id="@+id/domingoBtnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="D" />
 
             <Button
-                android:id="@+id/segundaBtn"
+                android:id="@+id/segundaBtnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="S" />
 
             <Button
-                android:id="@+id/tercaBtn"
+                android:id="@+id/tercaBtnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="T" />
 
             <Button
-                android:id="@+id/quartaBtn"
+                android:id="@+id/quartaBtnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Q" />
 
             <Button
-                android:id="@+id/quintaBtn"
+                android:id="@+id/quintaBtnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Q" />
 
             <Button
-                android:id="@+id/sextaBtn"
+                android:id="@+id/sextaBtnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="S" />
 
             <Button
-                android:id="@+id/sabadoBtn"
+                android:id="@+id/sabadoBtnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -104,7 +104,7 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/dataTxt"
+            android:id="@+id/dataTxtEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -113,7 +113,7 @@
             android:textColorHint="#FFFFFF" />
 
         <EditText
-            android:id="@+id/horaTxt"
+            android:id="@+id/horaTxtEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -122,7 +122,7 @@
             android:textColorHint="#FFFFFF" />
 
         <EditText
-            android:id="@+id/enderecoTxt"
+            android:id="@+id/enderecoTxtEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -136,7 +136,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/tarefaTxt"
+                android:id="@+id/tarefaTxtEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -146,7 +146,7 @@
                 android:textColorHint="#FFFFFF" />
 
             <Button
-                android:id="@+id/adicionarTarefaBtn"
+                android:id="@+id/adicionarTarefaBtnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
