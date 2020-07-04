@@ -24,19 +24,15 @@ class MainActivity : AppCompatActivity() {
 
         alarmes.add(Alarm("teste",null,null,null,null, "11:30",null,null))
         alarmes.add(Alarm("teste2",null,null,null,null, "10:00",null,null))
-        alarmes.add(Alarm("teste3",null,null,null,null, "9:15",null,null))
+        alarmes.add(Alarm("teste3","dsfdsf",true, arrayListOf("Domingo","Segunda","Terca","Quarta","Quinta","Sexta","Sabado"),"sadas", "9:15","bvff",null))
 
         binding!!.tarefasRvMain.layoutManager = LinearLayoutManager(this)
 
-        binding!!.tarefasRvMain.adapter = AlarmAdapter(alarmes)
+        binding!!.tarefasRvMain.adapter = AlarmAdapter(alarmes,this)
     }
 
     fun showAdicionar(view: View){
         val intent = Intent(this, AddActivity::class.java)
         startActivity(intent)
-    }
-
-    fun showEditar(view:View){
-
     }
 }

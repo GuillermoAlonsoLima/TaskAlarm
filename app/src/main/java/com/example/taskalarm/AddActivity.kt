@@ -28,7 +28,7 @@ class AddActivity: AppCompatActivity() {
         val hora  = binding!!.horaTxtAdd.text.toString()
         val endereco  = binding!!.enderecoTxtAdd.text.toString()
         MainActivity.alarmes.add(Alarm(titulo,descricao,silencioso,dias,data,hora,endereco,null))
-        MainActivity.binding!!.tarefasRvMain.adapter = AlarmAdapter(MainActivity.alarmes)
+        MainActivity.binding!!.tarefasRvMain.adapter = AlarmAdapter(MainActivity.alarmes,this)
         finish()
     }
 
