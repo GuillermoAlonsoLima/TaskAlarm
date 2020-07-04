@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#673AB7"
+        tools:context=".AddActivity">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/adicionarBtnAdd"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:background="#3F51B5"
+                    android:onClick="adicionar"
+                    android:text="Adicionar"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/cancelarBtnAdd"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:background="#3F51B5"
+                    android:onClick="cancelar"
+                    android:text="Cancelar"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/tituloTxtAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Título"
+                android:inputType="textPersonName"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF" />
+
+            <EditText
+                android:id="@+id/descricaoTxtAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Descrição"
+                android:inputType="textMultiLine"
+                android:textColorHint="#FFFFFF" />
+
+            <CheckBox
+                android:id="@+id/silenciosoCbAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tocar no Silencioso"
+                android:textColor="#FFFFFF" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/domingoBtnAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#3F51B5"
+                    android:onClick="switchDia"
+                    android:text="D"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/segundaBtnAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#3F51B5"
+                    android:onClick="switchDia"
+                    android:text="S"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/tercaBtnAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#3F51B5"
+                    android:onClick="switchDia"
+                    android:text="T"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/quartaBtnAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#3F51B5"
+                    android:onClick="switchDia"
+                    android:text="Q"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/quintaBtnAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#3F51B5"
+                    android:onClick="switchDia"
+                    android:text="Q"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/sextaBtnAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#3F51B5"
+                    android:onClick="switchDia"
+                    android:text="S"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/sabadoBtnAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#3F51B5"
+                    android:onClick="switchDia"
+                    android:text="S"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/dataTxtAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Data"
+                android:inputType="date"
+                android:textColorHint="#FFFFFF" />
+
+            <EditText
+                android:id="@+id/horaTxtAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Hora"
+                android:inputType="time"
+                android:textColorHint="#FFFFFF" />
+
+            <EditText
+                android:id="@+id/enderecoTxtAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Endereço"
+                android:inputType="textPersonName"
+                android:textColorHint="#FFFFFF" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/tarefaTxtAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Tarefa"
+                    android:inputType="textPersonName"
+                    android:textColorHint="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/adicionarTarefaBtnAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#3F51B5"
+                    android:text="+"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -21,6 +21,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/editarBtnEdit"
+                android:layout_width="359px"
+                android:layout_height="wrap_content"
+                android:background="#3F51B5"
+                android:text="Editar"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/deletarBtnEdit"
+                android:layout_width="359px"
+                android:layout_height="wrap_content"
+                android:background="#3F51B5"
+                android:text="Deletar"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/cancelarBtnEdit"
+                android:layout_width="359px"
+                android:layout_height="wrap_content"
+                android:background="#3F51B5"
+                android:text="Cancelar"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+
         <EditText
             android:id="@+id/tituloTxtEdit"
             android:layout_width="match_parent"
@@ -58,49 +89,63 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="D" />
+                android:background="#3F51B5"
+                android:text="D"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/segundaBtnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="S" />
+                android:background="#3F51B5"
+                android:text="S"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/tercaBtnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="T" />
+                android:background="#3F51B5"
+                android:text="T"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/quartaBtnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Q" />
+                android:background="#3F51B5"
+                android:text="Q"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/quintaBtnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Q" />
+                android:background="#3F51B5"
+                android:text="Q"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/sextaBtnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="S" />
+                android:background="#3F51B5"
+                android:text="S"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/sabadoBtnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="S" />
+                android:background="#3F51B5"
+                android:text="S"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
         <EditText
@@ -150,7 +195,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="+" />
+                android:background="#3F51B5"
+                android:text="+"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
