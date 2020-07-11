@@ -22,9 +22,6 @@ class EditActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.alarm_edit)
 
-        val titulo1 = intent.getStringExtra("titulo")
-        val hora1 = intent.getStringExtra("hora")
-
         id = intent.getIntExtra("id",0)
         binding!!.tituloTxtEdit.setText(intent.getStringExtra("titulo"))
         binding!!.descricaoTxtEdit.setText(intent.getStringExtra("descricao"))
@@ -35,15 +32,6 @@ class EditActivity : AppCompatActivity() {
         binding!!.enderecoTxtEdit.setText(intent.getStringExtra("endereco"))
 
         turnDias()
-
-        val titulo  = binding!!.tituloTxtEdit.text.toString()
-        val descricao  = binding!!.descricaoTxtEdit.text.toString()
-        val silencioso  = binding!!.silenciosoCbEdit.isChecked
-        val dias  = getCheckedDias()
-        val data  = binding!!.dataTxtEdit.text.toString()
-        val hora  = binding!!.horaTxtEdit.text.toString()
-        val endereco  = binding!!.enderecoTxtEdit.text.toString()
-
     }
 
     fun editar(view: View){
