@@ -1,6 +1,7 @@
 package com.example.taskalarm
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.taskalarm.databinding.AlarmBinding
@@ -18,6 +19,13 @@ class AlarmActivity: AppCompatActivity() {
         binding!!.horaTxtAlarm.setText(intent.getStringExtra("data")+" "+intent.getStringExtra("hora"))
         binding!!.tituloTxtAlarm.setText(intent.getStringExtra("titulo"))
         binding!!.descricaoTxtAlarm.setText(intent.getStringExtra("descricao"))
+        binding!!.fecharAlarmeBtnAlarm.setOnClickListener{
+            fechar()
+        }
+    }
+
+    fun fechar(){
+        finish()
     }
 
 }

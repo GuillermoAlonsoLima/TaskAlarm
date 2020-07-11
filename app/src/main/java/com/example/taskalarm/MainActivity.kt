@@ -1,9 +1,10 @@
 package com.example.taskalarm
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.jetpack2.AlarmAdapter
@@ -11,6 +12,7 @@ import com.example.taskalarm.databinding.ActivityMainBinding
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.concurrent.timerTask
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         binding!!.tarefasRvMain.adapter = AlarmAdapter(alarmes,this)
 
         Timer().schedule(timerTask {
-            showAlarme(alarmes[2])
+            showAlarm(alarmes[2])
         }, 5000)
 
     }
@@ -44,7 +46,12 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun showAlarme(alarm: Alarm){
+    fun showAlarm(alarm: Alarm){
+
+//        val mp: MediaPlayer = MediaPlayer.create(applicationContext, R.raw.alarm)
+//        mp.setOnPreparedListener {
+//            mp.start()
+//        }
 
         val intent = Intent(this, AlarmActivity::class.java).apply {
             putExtra("data",alarm.data)
