@@ -16,9 +16,17 @@ class AlarmActivity: AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.alarm)
 
-        binding!!.horaTxtAlarm.setText(intent.getStringExtra("data")+" "+intent.getStringExtra("hora"))
-        binding!!.tituloTxtAlarm.setText(intent.getStringExtra("titulo"))
-        binding!!.descricaoTxtAlarm.setText(intent.getStringExtra("descricao"))
+        if(intent.getStringExtra("data") != null){
+            binding!!.horaTxtAlarm.text = intent.getStringExtra("data")+" "+intent.getStringExtra("hora")
+        }else{
+            binding!!.horaTxtAlarm.text = intent.getStringExtra("hora")
+        }
+        binding!!.tituloTxtAlarm.text = intent.getStringExtra("titulo")
+        if(intent.getStringExtra("descricao") != null){
+            binding!!.descricaoTxtAlarm.text = intent.getStringExtra("descricao")
+        }else{
+            binding!!.descricaoTxtAlarm.text = ""
+        }
         binding!!.fecharAlarmeBtnAlarm.setOnClickListener{
             fechar()
         }

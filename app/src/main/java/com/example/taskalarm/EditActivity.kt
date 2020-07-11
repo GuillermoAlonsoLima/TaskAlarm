@@ -3,8 +3,6 @@ package com.example.taskalarm
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import android.widget.CheckBox
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.jetpack2.AlarmAdapter
@@ -42,7 +40,17 @@ class EditActivity : AppCompatActivity() {
         val data  = binding!!.dataTxtEdit.text.toString()
         val hora  = binding!!.horaTxtEdit.text.toString()
         val endereco  = binding!!.enderecoTxtEdit.text.toString()
-        MainActivity.alarmes[id!!] = Alarm(titulo,descricao,silencioso,dias,data,hora,endereco,null)
+        MainActivity.alarmes[id!!] = Alarm(
+            titulo,
+            descricao,
+            silencioso,
+            dias,
+            data,
+            hora,
+            endereco,
+            null,
+            this
+        )
         MainActivity.binding!!.tarefasRvMain.adapter = AlarmAdapter(MainActivity.alarmes,this)
         finish()
     }

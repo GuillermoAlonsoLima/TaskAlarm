@@ -1,7 +1,6 @@
 package com.example.taskalarm
 
 import android.content.Intent
-import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -27,9 +26,9 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        alarmes.add(Alarm("teste",null,null,null,null, "11:30",null,null))
-        alarmes.add(Alarm("teste2",null,null,null,null, "10:00",null,null))
-        alarmes.add(Alarm("teste3","dsfdsf",true, arrayListOf("Domingo","Terca","Quarta","Quinta","Sabado"),"11/07/2020", "9:15","bvff",null))
+        alarmes.add(Alarm("teste",null,null,null,null, "19:45",null,null,this))
+        alarmes.add(Alarm("teste2",null,null,null,null, "10:00",null,null,this))
+        alarmes.add(Alarm("teste3","dsfdsf",true, arrayListOf("Domingo","Terca","Quarta","Quinta","Sabado"),"11/07/2020", "9:15","bvff",null,this))
 
         binding!!.tarefasRvMain.layoutManager = LinearLayoutManager(this)
 
