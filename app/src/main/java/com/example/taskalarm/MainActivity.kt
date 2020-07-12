@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         alarmes.add(Alarm("teste",null,null,null,null, "19:45",null,null,this))
         alarmes.add(Alarm("teste2",null,null,null,null, "10:00",null,null,this))
-        alarmes.add(Alarm("teste3","dsfdsf",true, arrayListOf("Domingo","Terca","Quarta","Quinta","Sabado"),"11/07/2020", "9:15","bvff",null,this))
+        alarmes.add(Alarm("teste3","dsfdsf",true, arrayListOf("domingo","terca","quarta","quinta","sabado"),"11/07/2020", "9:15","bvff",null,this))
 
         binding!!.tarefasRvMain.layoutManager = LinearLayoutManager(this)
 

@@ -132,7 +132,7 @@ class EditActivity : AppCompatActivity() {
     }
 
     fun getCheckedDias(): ArrayList<String>{
-        val diasNome = arrayListOf("Domingo","Segunda","Terca","Quarta","Quinta","Sexta","Sabado")
+        val diasNome = arrayListOf("domingo","segunda","terca","quarta","quinta","sexta","sabado")
         val checkedDias = ArrayList<String>()
         for(i in dias!!.indices){
             if(dias!![i]){
@@ -146,13 +146,13 @@ class EditActivity : AppCompatActivity() {
         val booleanDias = arrayListOf(false,false,false,false,false,false,false)
         for(dia in diasVar){
             when(dia){
-                "Domingo" -> { booleanDias[0] = true }
-                "Segunda" -> { booleanDias[1] = true }
-                "Terca" -> { booleanDias[2] = true }
-                "Quarta" -> { booleanDias[3] = true }
-                "Quinta" -> { booleanDias[4] = true }
-                "Sexta" -> { booleanDias[5] = true }
-                "Sabado" -> { booleanDias[6] = true }
+                "domingo" -> { booleanDias[0] = true }
+                "segunda" -> { booleanDias[1] = true }
+                "terca" -> { booleanDias[2] = true }
+                "quarta" -> { booleanDias[3] = true }
+                "quinta" -> { booleanDias[4] = true }
+                "sexta" -> { booleanDias[5] = true }
+                "sabado" -> { booleanDias[6] = true }
             }
         }
         return booleanDias

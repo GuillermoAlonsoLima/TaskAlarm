@@ -88,7 +88,7 @@ class AddActivity: AppCompatActivity() {
     }
 
     fun getCheckedDias(): ArrayList<String>{
-        val diasNome = arrayListOf("Domingo","Segunda","Terca","Quarta","Quinta","Sexta","Sabado")
+        val diasNome = arrayListOf("domingo","segunda","terca","quarta","quinta","sexta","sabado")
         val checkedDias = ArrayList<String>()
         for(i in dias.indices){
             if(dias[i]){
