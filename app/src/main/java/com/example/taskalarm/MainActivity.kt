@@ -15,8 +15,10 @@ import kotlin.concurrent.timerTask
 
 class MainActivity : AppCompatActivity() {
 
+    val alarmDAO = AlarmDAO(this)
+
     companion object{
-        val alarmes = ArrayList<Alarm>()
+        var alarmes = ArrayList<Alarm>()
         var binding: ActivityMainBinding? = null
     }
 
@@ -26,18 +28,31 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        alarmes.add(Alarm("teste",null,null,null,null, "19:45",null,null,this))
-        alarmes.add(Alarm("teste2",null,null,null,null, "10:00",null,null,this))
-        alarmes.add(Alarm("teste3","dsfdsf",true, arrayListOf("domingo","terca","quarta","quinta","sabado"),"11/07/2020", "9:15","bvff",null,this))
+//        alarmes.add(Alarm("teste",null,null,null,null, "19:45",null,null,this))
+//        alarmes.add(Alarm("teste2",null,null,null,null, "10:00",null,null,this))
+//        alarmes.add(Alarm("teste3","dsfdsf",true, arrayListOf("domingo","terca","quarta","quinta","sabado"),"11/07/2020", "9:15","bvff",
+//            arrayListOf("teste1","teste2","teste3"),this))
+
+        alarmes = alarmDAO.selecionarTudo()
+        for(alarme in alarmes){
+            println("ID:"+alarme.id)
+        }
 
         binding!!.tarefasRvMain.layoutManager = LinearLayoutManager(this)
 
         binding!!.tarefasRvMain.adapter = AlarmAdapter(alarmes,this)
 
-        Timer().schedule(timerTask {
-            showAlarm(alarmes[2])
-        }, 5000)
-
+//        Timer().schedule(timerTask {
+//            showAlarm(alarmes[2])
+//        }, 5000)
+//        val intent = Intent(this, AlarmActivity::class.java).apply {
+//            putExtra("data",data)
+//            putExtra("hora",alarmes[2].data)
+//            putExtra("titulo",alarmes[2].titulo)
+//            putExtra("descricao",alarmes[2].descricao)
+//            putExtra("tarefas",alarmes[2].tarefas)
+//        }
+//        this.startActivity(intent)
     }
 
     fun showAdicionar(view: View){
@@ -60,4 +75,10 @@ class MainActivity : AppCompatActivity() {
         }
         startActivity(intent)
     }
+
+    override fun onStop() {
+
+        super.onStop()
+    }
+
 }

@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.taskalarm.databinding.AlarmBinding
 
 class AlarmActivity: AppCompatActivity() {
@@ -30,6 +32,12 @@ class AlarmActivity: AppCompatActivity() {
         binding!!.fecharAlarmeBtnAlarm.setOnClickListener{
             fechar()
         }
+
+        if(intent.getStringArrayListExtra("tarefas") != null){
+            binding!!.listaTarefasRvAlarm.layoutManager = LinearLayoutManager(this)
+            binding!!.listaTarefasRvAlarm.adapter = TaskAdapterAlarm(intent.getStringArrayListExtra("tarefas"))
+        }
+
     }
 
     fun fechar(){

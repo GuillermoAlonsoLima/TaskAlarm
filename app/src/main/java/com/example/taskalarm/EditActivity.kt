@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.jetpack2.AlarmAdapter
 import com.example.taskalarm.databinding.AlarmEditBinding
 
@@ -12,7 +14,13 @@ class EditActivity : AppCompatActivity() {
 
     var binding: AlarmEditBinding? = null
     var dias = arrayListOf(false,false,false,false,false,false,false)
-    var id:Int? = null
+    var id:Long? = null
+    val alarmDAO = AlarmDAO(this)
+
+    companion object{
+        var tarefas:ArrayList<String> = ArrayList()
+        var tasksRv:RecyclerView? = null
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,14 +28,23 @@ class EditActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.alarm_edit)
 
-        id = intent.getIntExtra("id",0)
+        id = intent.getLongExtra("id",0)
         binding!!.tituloTxtEdit.setText(intent.getStringExtra("titulo"))
         binding!!.descricaoTxtEdit.setText(intent.getStringExtra("descricao"))
         binding!!.silenciosoCbEdit.setChecked(intent.getBooleanExtra("silencio",false))
-        dias = getBooleanDias(intent.getStringArrayListExtra("dias"))
+        if(intent.getStringArrayListExtra("dias") != null){
+            dias =  getBooleanDias(intent.getStringArrayListExtra("dias"))
+        }
         binding!!.dataTxtEdit.setText(intent.getStringExtra("data"))
         binding!!.horaTxtEdit.setText(intent.getStringExtra("hora"))
         binding!!.enderecoTxtEdit.setText(intent.getStringExtra("endereco"))
+
+        binding!!.tasksRvEdit.layoutManager = LinearLayoutManager(this)
+        if(intent.getStringArrayListExtra("tarefas") != null){
+            tarefas = intent.getStringArrayListExtra("tarefas")
+        }
+        binding!!.tasksRvEdit.adapter = TaskAdapterEdit(tarefas)
+        tasksRv = binding!!.tasksRvEdit
 
         turnDias()
     }
@@ -40,7 +57,8 @@ class EditActivity : AppCompatActivity() {
         val data  = binding!!.dataTxtEdit.text.toString()
         val hora  = binding!!.horaTxtEdit.text.toString()
         val endereco  = binding!!.enderecoTxtEdit.text.toString()
-        MainActivity.alarmes[id!!] = Alarm(
+        alarmDAO.editar(Alarm(
+            id!!,
             titulo,
             descricao,
             silencioso,
@@ -48,20 +66,27 @@ class EditActivity : AppCompatActivity() {
             data,
             hora,
             endereco,
-            null,
+            tarefas,
             this
-        )
-        MainActivity.binding!!.tarefasRvMain.adapter = AlarmAdapter(MainActivity.alarmes,this)
+        ))
+        MainActivity.binding!!.tarefasRvMain.adapter = AlarmAdapter(alarmDAO.selecionarTudo(),this)
         finish()
     }
 
     fun deletar(view:View){
-        MainActivity.alarmes.removeAt(id!!)
+        alarmDAO.deletar(id!!)
+        MainActivity.binding!!.tarefasRvMain.adapter = AlarmAdapter(alarmDAO.selecionarTudo(),this)
         finish()
     }
 
     fun cancelar(view: View){
         finish()
+    }
+
+    fun adicionarTarefa(view:View){
+        tarefas.add(binding!!.tarefaTxtEdit.text.toString())
+        binding!!.tasksRvEdit.adapter = TaskAdapterEdit(tarefas)
+        binding!!.tarefaTxtEdit.setText("")
     }
 
     fun switchDia(view:View){

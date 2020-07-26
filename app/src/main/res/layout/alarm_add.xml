@@ -194,11 +194,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#3F51B5"
+                    android:onClick="adicionarTarefa"
                     android:text="+"
                     android:textColor="#FFFFFF" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tasksRvAdd"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

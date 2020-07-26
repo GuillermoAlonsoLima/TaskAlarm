@@ -8,6 +8,7 @@ import kotlin.concurrent.timerTask
 
 
 class Alarm(
+    id:Long,
     titulo: String,
     descricao: String?,
     silencio: Boolean?,
@@ -16,8 +17,9 @@ class Alarm(
     hora: String,
     endereco: String?,
     tarefas: ArrayList<String>?,
-    context: Context
+    context: Context?
 ) {
+    var id = id
     var titulo = titulo
     var descricao = descricao
     var silencio = silencio
@@ -31,22 +33,23 @@ class Alarm(
     init {
         if(!dias.isNullOrEmpty()){
             if(isCurrentDayInArray() && getDelay()>0) {
-                setTimer(context)
+               //setTimer(context)
             }
         }else{
-            setTimer(context)
+            //setTimer(context)
         }
 
     }
 
     private fun setTimer(context:Context){
-        val teste = getDelay()
+        val teste = tarefas
         timer.schedule(timerTask {
             val intent = Intent(context, AlarmActivity::class.java).apply {
                 putExtra("data",data)
                 putExtra("hora",hora)
                 putExtra("titulo",titulo)
                 putExtra("descricao",descricao)
+                putExtra("tarefas",tarefas)
             }
             context.startActivity(intent)
         }, getDelay())
@@ -67,8 +70,8 @@ class Alarm(
     }
 
     private fun getDelay():Long{
-        var format:SimpleDateFormat? = null
-        var horaFormatted:Date? = null
+        var format: SimpleDateFormat?
+        var horaFormatted: Date?
         if(data == null){
             format = SimpleDateFormat("dd/MM/yyyy")
             val currentDate = format.format(Date())

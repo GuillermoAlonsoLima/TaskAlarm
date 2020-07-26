@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.jetpack2.AlarmAdapter
 import com.example.taskalarm.databinding.AlarmAddBinding
 
@@ -12,12 +14,22 @@ class AddActivity: AppCompatActivity() {
 
     var binding: AlarmAddBinding? = null
     val dias = arrayListOf(false,false,false,false,false,false,false)
+    val alarmDAO = AlarmDAO(this)
+
+    companion object{
+        var tarefas:ArrayList<String> = ArrayList()
+        var tasksRv: RecyclerView? = null
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.alarm_add)
 
         binding = DataBindingUtil.setContentView(this, R.layout.alarm_add)
+
+        binding!!.tasksRvAdd.layoutManager = LinearLayoutManager(this)
+        binding!!.tasksRvAdd.adapter = TaskAdapterAdd(AddActivity.tarefas)
+        tasksRv = binding!!.tasksRvAdd
     }
 
     fun adicionar(view:View){
@@ -28,7 +40,8 @@ class AddActivity: AppCompatActivity() {
         val data  = binding!!.dataTxtAdd.text.toString()
         val hora  = binding!!.horaTxtAdd.text.toString()
         val endereco  = binding!!.enderecoTxtAdd.text.toString()
-        MainActivity.alarmes.add(Alarm(
+        alarmDAO.adicionar(Alarm(
+            0,
             titulo,
             descricao,
             silencioso,
@@ -36,15 +49,21 @@ class AddActivity: AppCompatActivity() {
             data,
             hora,
             endereco,
-            null,
+            tarefas,
             this
         ))
-        MainActivity.binding!!.tarefasRvMain.adapter = AlarmAdapter(MainActivity.alarmes,this)
+        MainActivity.binding!!.tarefasRvMain.adapter = AlarmAdapter(alarmDAO.selecionarTudo(),this)
         finish()
     }
 
     fun cancelar(view:View){
         finish()
+    }
+
+    fun adicionarTarefa(view:View){
+        tarefas.add(binding!!.tarefaTxtAdd.text.toString())
+        binding!!.tasksRvAdd.adapter = TaskAdapterAdd(tarefas)
+        binding!!.tarefaTxtAdd.setText("")
     }
 
     fun switchDia(view:View){
