@@ -15,7 +15,7 @@ import kotlin.concurrent.timerTask
 
 class MainActivity : AppCompatActivity() {
 
-    val alarmDAO = AlarmDAO(this)
+    private val alarmDAO = AlarmDAO(this)
 
     companion object{
         var alarmes = ArrayList<Alarm>()
@@ -42,9 +42,9 @@ class MainActivity : AppCompatActivity() {
 
         binding!!.tarefasRvMain.adapter = AlarmAdapter(alarmes,this)
 
-//        Timer().schedule(timerTask {
-//            showAlarm(alarmes[2])
-//        }, 5000)
+        Timer().schedule(timerTask {
+            showAlarm(alarmes[0])
+        }, 5000)
 //        val intent = Intent(this, AlarmActivity::class.java).apply {
 //            putExtra("data",data)
 //            putExtra("hora",alarmes[2].data)
@@ -72,6 +72,7 @@ class MainActivity : AppCompatActivity() {
             putExtra("hora",alarm.hora)
             putExtra("titulo",alarm.titulo)
             putExtra("descricao",alarm.descricao)
+            putExtra("tarefas",alarm.tarefas)
         }
         startActivity(intent)
     }
