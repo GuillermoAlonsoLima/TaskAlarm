@@ -1,11 +1,19 @@
-Task Alarm
+**Task Alarm**
+
 Este presente relatório é referente ao TCC da Pós Graduação de Desenvolvimento de Aplicativos Mobile.
-Resumo do Projeto
+
+**Resumo do Projeto**
+
 Várias pessoas tem dificuldade em manter a atenção ou tem problema de memória. Talvez elas tenham tantos compromissos e tarefas, as vezes ao mesmo tempo, que se torna complicado lembrar ou prestar atenção em todas. Isso aumenta a chance de que percam compromissos muito importantes para sua vida profissional e pessoal, como reuniões, consultas médicas, etc.
+
 Uma solução para esse problema seria a união do alarme a lista de tarefas, permitindo que o usuário seja lembrado de compromissos, mas também tenha uma lista de tarefas para cada um deles, evitando assim que o usuário esqueça detalhes importantes como levar documentos para uma reunião.
+
 Espera-se assim que o usuário possa ficar mais tranquilo, contando com uma ferramenta que o ajudará a cumprir seus compromissos sem estresse.
-Definição do Problema
+
+**Definição do Problema**
+
 O problema do esquecimento de realizar tarefas, não somente atinge pessoas com déficit de atenção ou problema de memória, mas também idosos e pessoas muito ocupadas. No artigo “Como diferenciar déficit de atenção de problemas de memória?” encontrado no site “NeuroSaber” fica claro que apesar de ter razões e comportamentos diferentes entre os problemas, a dificuldade de se lembrar é a mesma.
+
 A informação citada acima foi descoberta na etapa de Discovery, que é a etapa onde foi perguntado a várias pessoas sobre quais funcionalidades elas considerariam relevantes no app e também perguntas que viabilizaram traçar um perfil do nosso público alvo. A consulta foi feita entre pessoas comuns em grupos de What’s App e pessoalmente. Os respondentes não eram somente trabalhadores ou estudantes, mas também pessoas desempregadas ou aposentadas que também possuem compromissos e poderiam se beneficiar deste aplicativo.
 O diferencial do aplicativo Task Alarm é a praticidade, pois neste possui as duas funcionalidades, tanto a lista, quanto o alarme, por exemplo, tenho um compromisso de reunião onde terei que levar certos documentos, ao utilizar meu aplicativo, só um único alarme me avisará do compromisso e me mostrará a lista de tarefas, onde posso colocar os documentos que tenho que levar, esta praticidade não acontece com os outros aplicativos já existentes, conforme pode ser verificado na tabela comparativa dos aplicativos correlatos.
  
